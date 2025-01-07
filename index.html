@@ -10,6 +10,7 @@
     <div class="container">
         <div class="controls">
             <h1>Wallpaper Generator</h1>
+            
             <label for="width">Width:</label>
             <input type="number" id="widthInput" min="800" max="3840" step="10" value="1920">
             <select id="widthUnit">
@@ -28,8 +29,25 @@
             </select>
             <input type="range" id="height" min="600" max="2160" step="10" value="1080">
 
-            <label for="color">Select Color:</label>
+            <label for="color">Background Color:</label>
             <input type="color" id="color" value="#ff0000">
+
+            <label for="pattern">Select Pattern:</label>
+            <select id="pattern">
+                <option value="none">None</option>
+                <option value="stripes">Stripes</option>
+                <option value="dots">Dots</option>
+                <option value="zigzag">Zigzag</option>
+            </select>
+
+            <label for="patternColor">Pattern Color:</label>
+            <input type="color" id="patternColor" value="#000000">
+
+            <label for="patternSize">Pattern Size:</label>
+            <input type="range" id="patternSize" min="10" max="200" step="10" value="50">
+
+            <label for="patternRepeat">Number of Patterns:</label>
+            <input type="number" id="patternRepeat" min="1" max="100" step="1" value="10">
 
             <div class="button-container">
                 <button id="generate" class="styled-button">Generate Preview</button>
