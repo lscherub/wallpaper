@@ -1,30 +1,41 @@
 body {
     font-family: Arial, sans-serif;
     padding: 20px;
+    margin: 0;
+    box-sizing: border-box;
 }
 
 .container {
     display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.controls, .preview {
+    flex: 1;
 }
 
 .controls {
-    max-width: 300px;
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
 }
 
 label, input, select {
     display: block;
     margin: 10px 0;
+    width: 100%;
 }
 
-input[type="range"] {
-    width: 100%;
+input[type="range"], input[type="color"], input[type="number"], select {
+    width: calc(100% - 20px);
+    margin: 0 auto;
 }
 
 .button-container {
     display: flex;
     justify-content: space-between;
+    margin-top: 20px;
 }
 
 .styled-button {
@@ -34,6 +45,9 @@ input[type="range"] {
     background-color: #fff;
     cursor: pointer;
     transition: background-color 0.3s, color 0.3s;
+    width: 48%;
+    text-align: center;
+    font-size: 16px;
 }
 
 .styled-button:hover {
@@ -41,13 +55,38 @@ input[type="range"] {
     color: #fff;
 }
 
+.styled-button:active {
+    transform: scale(0.98);
+}
+
 .preview {
-    width: 100%;
-    max-width: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #000;
+    padding: 10px;
+    box-sizing: border-box;
 }
 
 #previewCanvas {
     width: 100%;
+    max-width: 500px;
     height: auto;
     border: 2px solid #000;
+}
+
+@media (min-width: 768px) {
+    .container {
+        flex-direction: row;
+    }
+
+    .controls {
+        max-width: 300px;
+        margin-right: 20px;
+    }
+
+    .preview {
+        flex-grow: 1;
+        margin-left: 20px;
+    }
 }
