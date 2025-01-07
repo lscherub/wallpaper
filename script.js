@@ -1,20 +1,24 @@
-const widthInput = document.getElementById('width');
-const heightInput = document.getElementById('height');
+const widthRange = document.getElementById('width');
+const heightRange = document.getElementById('height');
+const widthInput = document.getElementById('widthInput');
+const heightInput = document.getElementById('heightInput');
+const widthUnit = document.getElementById('widthUnit');
+const heightUnit = document.getElementById('heightUnit');
 const colorInput = document.getElementById('color');
-const widthValue = document.getElementById('widthValue');
-const heightValue = document.getElementById('heightValue');
 const previewCanvas = document.getElementById('previewCanvas');
 const downloadButton = document.getElementById('download');
 
 const ctx = previewCanvas.getContext('2d');
 
-function updatePreview() {
-    const width = widthInput.value;
-    const height = heightInput.value;
-    const color = colorInput.value;
+function updateValues() {
+    widthInput.value = widthRange.value;
+    heightInput.value = heightRange.value;
+}
 
-    widthValue.innerText = width;
-    heightValue.innerText = height;
+function updatePreview() {
+    const width = widthRange.value;
+    const height = heightRange.value;
+    const color = colorInput.value;
 
     previewCanvas.width = width / 10;
     previewCanvas.height = height / 10;
@@ -23,8 +27,8 @@ function updatePreview() {
 }
 
 function downloadWallpaper() {
-    const width = widthInput.value;
-    const height = heightInput.value;
+    const width = widthRange.value;
+    const height = heightRange.value;
     const color = colorInput.value;
 
     const fullCanvas = document.createElement('canvas');
@@ -41,8 +45,10 @@ function downloadWallpaper() {
     link.click();
 }
 
-widthInput.addEventListener('input', updatePreview);
-heightInput.addEventListener('input', updatePreview);
+widthRange.addEventListener('input', updateValues);
+heightRange.addEventListener('input', updateValues);
+widthRange.addEventListener('input', updatePreview);
+heightRange.addEventListener('input', updatePreview);
 colorInput.addEventListener('input', updatePreview);
 document.getElementById('generate').addEventListener('click', function() {
     updatePreview();
