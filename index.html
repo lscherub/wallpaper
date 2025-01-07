@@ -19,7 +19,20 @@
 
         <label for="color">Background Color:</label>
         <input id="color" type="color" value="#ffffff">
+        
+        <label for="patternColor">Pattern Color:</label>
+        <input id="patternColor" type="color" value="#000000">
 
+        <label for="patternSize">Pattern Size (px):</label>
+        <input id="patternSize" type="number" value="50">
+
+        <label for="patternRepeat">Pattern Repeat:</label>
+        <select id="patternRepeat">
+            <option value="repeat">Repeat</option>
+            <option value="repeat-x">Repeat X</option>
+            <option value="repeat-y">Repeat Y</option>
+            <option value="no-repeat">No Repeat</option>
+        </select>
 
         <label for="patternCount">Number of Patterns/Icons:</label>
         <input id="patternCount" type="range" min="1" max="100" value="10">
