@@ -10,19 +10,20 @@
     <div class="container">
         <h1>Wallpaper Generator</h1>
         <label for="width">Width:</label>
-        <input type="range" id="width" min="800" max="3840" step="10">
+        <input type="range" id="width" min="800" max="3840" step="10" value="1920">
         <span id="widthValue">1920</span>px
 
         <label for="height">Height:</label>
-        <input type="range" id="height" min="600" max="2160" step="10">
+        <input type="range" id="height" min="600" max="2160" step="10" value="1080">
         <span id="heightValue">1080</span>px
 
         <label for="color">Select Color:</label>
-        <input type="color" id="color">
+        <input type="color" id="color" value="#ff0000">
 
-        <button id="generate">Generate Wallpaper</button>
+        <button id="generate">Generate Preview</button>
+        <button id="download" style="display:none;">Download Wallpaper</button>
 
-        <div id="wallpaper" class="wallpaper"></div>
+        <canvas id="previewCanvas" class="wallpaper"></canvas>
     </div>
     <script src="script.js"></script>
 </body>
