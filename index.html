@@ -8,22 +8,37 @@
 </head>
 <body>
     <div class="container">
-        <h1>Wallpaper Generator</h1>
-        <label for="width">Width:</label>
-        <input type="range" id="width" min="800" max="3840" step="10" value="1920">
-        <span id="widthValue">1920</span>px
+        <div class="controls">
+            <h1>Wallpaper Generator</h1>
+            <label for="width">Width:</label>
+            <input type="number" id="widthInput" min="800" max="3840" step="10" value="1920">
+            <select id="widthUnit">
+                <option value="px">px</option>
+                <option value="em">em</option>
+                <option value="rem">rem</option>
+            </select>
+            <input type="range" id="width" min="800" max="3840" step="10" value="1920">
 
-        <label for="height">Height:</label>
-        <input type="range" id="height" min="600" max="2160" step="10" value="1080">
-        <span id="heightValue">1080</span>px
+            <label for="height">Height:</label>
+            <input type="number" id="heightInput" min="600" max="2160" step="10" value="1080">
+            <select id="heightUnit">
+                <option value="px">px</option>
+                <option value="em">em</option>
+                <option value="rem">rem</option>
+            </select>
+            <input type="range" id="height" min="600" max="2160" step="10" value="1080">
 
-        <label for="color">Select Color:</label>
-        <input type="color" id="color" value="#ff0000">
+            <label for="color">Select Color:</label>
+            <input type="color" id="color" value="#ff0000">
 
-        <button id="generate">Generate Preview</button>
-        <button id="download" style="display:none;">Download Wallpaper</button>
-
-        <canvas id="previewCanvas" class="wallpaper"></canvas>
+            <div class="button-container">
+                <button id="generate" class="styled-button">Generate Preview</button>
+                <button id="download" class="styled-button" style="display:none;">Download Wallpaper</button>
+            </div>
+        </div>
+        <div class="preview">
+            <canvas id="previewCanvas" class="wallpaper"></canvas>
+        </div>
     </div>
     <script src="script.js"></script>
 </body>
