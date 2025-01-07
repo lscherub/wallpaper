@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wallpaper Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Wallpaper Generator</h1>
+        <label for="width">Width:</label>
+        <input type="range" id="width" min="800" max="3840" step="10">
+        <span id="widthValue">1920</span>px
+
+        <label for="height">Height:</label>
+        <input type="range" id="height" min="600" max="2160" step="10">
+        <span id="heightValue">1080</span>px
+
+        <label for="color">Select Color:</label>
+        <input type="color" id="color">
+
+        <button id="generate">Generate Wallpaper</button>
+
+        <div id="wallpaper" class="wallpaper"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
