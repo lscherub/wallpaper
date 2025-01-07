@@ -8,56 +8,52 @@
 </head>
 <body>
     <div class="container">
-        <div class="controls">
-            <h1>Wallpaper Generator</h1>
-            
-            <label for="width">Width:</label>
-            <input type="number" id="widthInput" min="800" max="3840" step="10" value="1920">
-            <select id="widthUnit">
-                <option value="px">px</option>
-                <option value="em">em</option>
-                <option value="rem">rem</option>
-            </select>
-            <input type="range" id="width" min="800" max="3840" step="10" value="1920">
+    <div class="controls">
+        <label for="width">Width (px):</label>
+        <input id="width" type="number" value="500">
+        <input id="widthSlider" type="range" min="100" max="1920" value="500">
 
-            <label for="height">Height:</label>
-            <input type="number" id="heightInput" min="600" max="2160" step="10" value="1080">
-            <select id="heightUnit">
-                <option value="px">px</option>
-                <option value="em">em</option>
-                <option value="rem">rem</option>
-            </select>
-            <input type="range" id="height" min="600" max="2160" step="10" value="1080">
+        <label for="height">Height (px):</label>
+        <input id="height" type="number" value="500">
+        <input id="heightSlider" type="range" min="100" max="1080" value="500">
 
-            <label for="color">Background Color:</label>
-            <input type="color" id="color" value="#ff0000">
+        <label for="color">Background Color:</label>
+        <input id="color" type="color" value="#ffffff">
 
-            <label for="pattern">Select Pattern:</label>
-            <select id="pattern">
-                <option value="none">None</option>
-                <option value="stripes">Stripes</option>
-                <option value="dots">Dots</option>
-                <option value="zigzag">Zigzag</option>
-            </select>
+        <label for="patternType">Pattern Type:</label>
+        <select id="patternType">
+            <option value="none">None</option>
+            <option value="circle">Circle</option>
+            <option value="square">Square</option>
+        </select>
 
-            <label for="patternColor">Pattern Color:</label>
-            <input type="color" id="patternColor" value="#000000">
+        <label for="patternColor">Pattern Color:</label>
+        <input id="patternColor" type="color" value="#000000">
 
-            <label for="patternSize">Pattern Size:</label>
-            <input type="range" id="patternSize" min="10" max="200" step="10" value="50">
+        <label for="patternSize">Pattern Size (px):</label>
+        <input id="patternSize" type="number" value="50">
 
-            <label for="patternRepeat">Number of Patterns:</label>
-            <input type="number" id="patternRepeat" min="1" max="100" step="1" value="10">
+        <label for="patternRepeat">Pattern Repeat:</label>
+        <select id="patternRepeat">
+            <option value="repeat">Repeat</option>
+            <option value="repeat-x">Repeat X</option>
+            <option value="repeat-y">Repeat Y</option>
+            <option value="no-repeat">No Repeat</option>
+        </select>
 
-            <div class="button-container">
-                <button id="generate" class="styled-button">Generate Preview</button>
-                <button id="download" class="styled-button" style="display:none;">Download Wallpaper</button>
-            </div>
-        </div>
-        <div class="preview">
-            <canvas id="previewCanvas" class="wallpaper"></canvas>
+        <label for="iconInput">Add Icon/Emoji:</label>
+        <input id="iconInput" type="text" placeholder="Enter emoji or icon">
+
+        <div class="button-container">
+            <button class="styled-button" onclick="generateWallpaper()">Generate Preview</button>
+            <button class="styled-button" onclick="downloadWallpaper()">Download</button>
         </div>
     </div>
+
+    <div class="preview">
+        <canvas id="previewCanvas"></canvas>
+    </div>
+</div>
     <script src="script.js"></script>
 </body>
 </html>
