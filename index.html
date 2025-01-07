@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
+<div class="container">
     <div class="controls">
         <label for="width">Width (px):</label>
         <input id="width" type="number" value="500">
@@ -20,36 +20,31 @@
         <label for="color">Background Color:</label>
         <input id="color" type="color" value="#ffffff">
 
+
+        <label for="patternCount">Number of Patterns/Icons:</label>
+        <input id="patternCount" type="range" min="1" max="100" value="10">
+
         <label for="patternType">Pattern Type:</label>
         <select id="patternType">
             <option value="none">None</option>
             <option value="circle">Circle</option>
             <option value="square">Square</option>
+            <option value="zigzag">Zigzag</option>
+            <option value="line">Line</option>
+            <option value="spiral">Spiral</option>
+            <option value="star">Star</option>
         </select>
 
-        <label for="patternColor">Pattern Color:</label>
-        <input id="patternColor" type="color" value="#000000">
-
-        <label for="patternSize">Pattern Size (px):</label>
-        <input id="patternSize" type="number" value="50">
-
-        <label for="patternRepeat">Pattern Repeat:</label>
-        <select id="patternRepeat">
-            <option value="repeat">Repeat</option>
-            <option value="repeat-x">Repeat X</option>
-            <option value="repeat-y">Repeat Y</option>
-            <option value="no-repeat">No Repeat</option>
-        </select>
-
+        <!-- Icons input -->
         <label for="iconInput">Add Icon/Emoji:</label>
         <input id="iconInput" type="text" placeholder="Enter emoji or icon">
+
 
         <div class="button-container">
             <button class="styled-button" onclick="generateWallpaper()">Generate Preview</button>
             <button class="styled-button" onclick="downloadWallpaper()">Download</button>
         </div>
     </div>
-
     <div class="preview">
         <canvas id="previewCanvas"></canvas>
     </div>
