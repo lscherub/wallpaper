@@ -19,6 +19,8 @@
 
         <label for="color">Background Color:</label>
         <input id="color" type="color" value="#ffffff">
+        <input id="color" type="color" value="#ffffff" onchange="syncHexInput()">
+        <input id="colorHex" type="text" value="#ffffff" placeholder="#ffffff" onchange="syncColorPicker()">
         
         <label for="patternColor">Pattern Color:</label>
         <input id="patternColor" type="color" value="#000000">
