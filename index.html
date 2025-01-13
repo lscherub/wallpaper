@@ -4,10 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wallpaper Generator</title>
-    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div class="container">
     <div class="controls">
         <label for="width">Width (px):</label>
         <input id="width" type="number" value="500">
@@ -19,9 +17,8 @@
 
         <label for="color">Background Color:</label>
         <input id="color" type="color" value="#ffffff">
-        <input id="color" type="color" value="#ffffff" onchange="syncHexInput()">
-        <input id="colorHex" type="text" value="#ffffff" placeholder="#ffffff" onchange="syncColorPicker()">
-        
+        <input id="colorHex" type="text" value="#ffffff" placeholder="#ffffff">
+
         <label for="patternColor">Pattern Color:</label>
         <input id="patternColor" type="color" value="#000000">
 
@@ -36,34 +33,22 @@
             <option value="no-repeat">No Repeat</option>
         </select>
 
-        <label for="patternCount">Number of Patterns/Icons:</label>
-        <input id="patternCount" type="range" min="1" max="100" value="10">
-
         <label for="patternType">Pattern Type:</label>
         <select id="patternType">
             <option value="none">None</option>
             <option value="circle">Circle</option>
             <option value="square">Square</option>
-            <option value="zigzag">Zigzag</option>
-            <option value="line">Line</option>
-            <option value="spiral">Spiral</option>
-            <option value="star">Star</option>
         </select>
 
-        <!-- Icons input -->
-        <label for="iconInput">Add Icon/Emoji:</label>
-        <input id="iconInput" type="text" placeholder="Enter emoji or icon">
+        <label for="iconInput">Icon (emoji or character):</label>
+        <input id="iconInput" type="text" placeholder="e.g., 😊">
 
+        <label for="patternCount">Number of Icons:</label>
+        <input id="patternCount" type="range" min="1" max="100" value="10">
+    </div>
 
-        <div class="button-container">
-            <button class="styled-button" onclick="generateWallpaper()">Generate Preview</button>
-            <button class="styled-button" onclick="downloadWallpaper()">Download</button>
-        </div>
-    </div>
-    <div class="preview">
-        <canvas id="previewCanvas"></canvas>
-    </div>
-</div>
+    <canvas id="previewCanvas"></canvas>
+
     <script src="script.js"></script>
 </body>
 </html>
