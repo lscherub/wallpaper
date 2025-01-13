@@ -29,10 +29,28 @@ document.getElementById('patternSize').addEventListener('input', generateWallpap
 document.getElementById('patternRepeat').addEventListener('change', generateWallpaper);
 document.getElementById('iconInput').addEventListener('input', generateWallpaper);
 
+function syncHexInput() {
+    const colorPicker = document.getElementById('color');
+    const hexInput = document.getElementById('colorHex');
+    hexInput.value = colorPicker.value;
+}
+
+function syncColorPicker() {
+    const colorPicker = document.getElementById('color');
+    const hexInput = document.getElementById('colorHex');
+    const hexValue = hexInput.value;
+
+    if (/^#([0-9A-F]{3}){1,2}$/i.test(hexValue)) {
+        colorPicker.value = hexValue;
+    } else {
+        alert('Invalid hex code');
+    }
+}
+
 function generateWallpaper() {
     const canvas = document.getElementById('previewCanvas');
     const ctx = canvas.getContext('2d');
-
+    const color = document.getElementById('colorHex').value;
     const width = parseInt(document.getElementById('width').value);
     const height = parseInt(document.getElementById('height').value);
     const color = document.getElementById('color').value;
