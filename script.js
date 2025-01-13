@@ -70,6 +70,7 @@ function generateWallpaper() {
         ctx.textBaseline = 'middle';
         ctx.fillText(icon, width / 2, height / 2);
     }
+    updateWallpaperBackground(color);
 }
 
 function applyPattern(ctx, width, height) {
@@ -111,7 +112,7 @@ function downloadWallpaper() {
 function generateWallpaper() {
     const canvas = document.getElementById('previewCanvas');
     const ctx = canvas.getContext('2d');
-
+    const color = document.getElementById('colorHex').value;
     const width = parseInt(document.getElementById('width').value);
     const height = parseInt(document.getElementById('height').value);
     const color = document.getElementById('color').value;
@@ -128,6 +129,7 @@ function generateWallpaper() {
     if (icon) {
         placeIcons(ctx, width, height, icon);
     }
+    updateWallpaperBackground(color);
 }
 
 function applyPattern(ctx, width, height) {
